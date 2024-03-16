@@ -1,0 +1,65 @@
+{% extends 'temp/admin_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style>
+        td {
+            color: white;
+            font-size: larger;
+            border: 1px solid #110000;
+            padding: 8px;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2>Manage Student</h2>
+
+        <div class="container mt-3">
+            <div class="table-responsive">
+                <table border="2" class="table table-bordered">
+                    <tr>
+                        <td>Photo</td>
+                        <td>Admission No</td>
+                        <td>Name</td>
+                        <td>Course</td>
+                        <td>Year</td>
+                        <td>Phone</td>
+                        <td>DOB</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+                    {% for i in x %}
+                    <tr>
+                        <td><img src="/static/{{i.photo}}" style="width: 25%; height: 25%;"></td>
+                        <td>{{i.adm_no}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.course}}</td>
+                        <td>{{i.year}}</td>
+                        <td>{{i.phone}}</td>
+                        <td>{{i.dob}}</td>
+                        <td>{{i.status}}</td>
+                        <td><a href="/student/approve/{{i.student_id}}" class="btn btn-outline-info">Approve</a><br><br>
+                            <a href="/student/reject/{{i.student_id}}" class="btn btn-outline-info">Reject</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'temp/student_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2> Student Profile</h2>
+
+        <table border="1" style="text-align: center;" class="table table-sm">
+            <tr>
+                <td>Photo</td>
+                <td>Admission No</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>Year</td>
+                <td>Phone</td>
+                <td>DOB</td>
+
+            </tr>
+            {% for i in x%}
+            <tr>
+                <td><img src="/static/{{i.photo}}" style="width: 25%; height: 25%;"></td>
+                <td>{{i.adm_no}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.course}}</td>
+                <td>{{i.year}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.dob}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+
+</body>
+
+</html>
+{% endblock %}
