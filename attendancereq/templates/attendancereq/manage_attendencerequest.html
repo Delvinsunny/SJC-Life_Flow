@@ -1,0 +1,56 @@
+{% extends 'temp/admin_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			text-align: left;
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<center>
+    <h2>Manage Attendence Request</h2>
+    <div class="container mt-3">
+        <div class="table-responsive">
+            <table border="2" class="table table-bordered">
+        <tr>
+            <td>Student Name</td>
+            <td>Date</td>
+            <td>Certificate</td>
+            <td>Request</td>
+            <td>Time</td>
+            <td>Status</td>
+            <td>Action</td>
+           
+           </tr>
+        {% for i in x %}
+        <tr>
+            <td>{{i.student.name}}</td>
+            <td>{{i.date}}</td>
+            <td><a href="/static/{{i.file}}" class="btn btn-outline-info" style="margin-left: 10%;">Download</a></td>
+            <td>{{i.request}}</td>
+            <td>{{i.time}}</td>
+            <td>{{i.status}}</td>
+            <td><a href="/attendancereq/approve/{{i.req_id}}" class="btn btn-outline-info" style="margin-left: 10%;">Approve</a>
+                <a href="/attendancereq/reject/{{i.req_id}}"class="btn btn-outline-info" style="margin-left: 10%;">Reject</a></td>
+            </tr>
+            {% endfor %}
+        
+    </table></div>
+    </div>
+</center>
+
+</body>
+</html>
+{% endblock %}

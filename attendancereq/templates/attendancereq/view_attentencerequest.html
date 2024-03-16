@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			text-align: left;
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+    <center>
+        <h2>View Attendence Request</h2>
+
+        <div class="container mt-3">
+			<div class="table-responsive">
+				<table border="2" class="table table-bordered">
+            <tr>
+                <td>Date</td>
+                <td>Certificate</td>
+                <td>Request</td>
+                <td>Time</td>
+                <td>Status</td>
+
+
+            </tr>
+            {% for i in x %}
+            <tr>
+                <td>{{i.date}}</td>
+                <td>{{i.file}}</td>
+                <td>{{i.request}}</td>
+                <td>{{i.time}}</td>
+                <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        </div>
+        </div>
+        
+    </center>
+
+</body>
+
+</html>

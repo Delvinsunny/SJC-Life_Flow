@@ -1,0 +1,51 @@
+{% extends 'temp/student_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Blood Request by Student</title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			text-align: left;
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<center>
+    <h2>View Blood Request By Student</h2>
+
+    <div class="container mt-3">
+        <div class="table-responsive">
+            <table border="2" class="table table-bordered">
+        <tr>
+            <td>Patiant Name</td>
+            <td>Blood group</td>
+            <td>Unit</td>
+            <td>Phone</td>
+            <td>Hospital</td>
+           </tr>
+        {% for i in x %}
+        <tr>
+            <td>{{i.patient.patient_name}}</td>
+            <td>{{i.group}}</td>
+            <td>{{i.unit}}</td>
+            <td>{{i.patient.phone}}</td>
+            <td>{{i.hospital}}</td>
+            </tr>
+            {% endfor %}
+        
+    </table>
+</div>
+</div></center>
+
+</body>
+</html>
+{% endblock %}

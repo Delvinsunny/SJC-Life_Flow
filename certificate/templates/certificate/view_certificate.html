@@ -1,0 +1,45 @@
+{% extends 'temp/student_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			text-align: left;
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<center>
+    <h2>View Certificate</h2>
+
+    <div class="container mt-3">
+        <div class="table-responsive">
+            <table border="2" class="table table-bordered">        <tr>
+            <td>Hospital Name</td>
+            <td>Donated Date</td>
+            <td>Certificate</td>
+           </tr>
+        {% for i in x%}
+        <tr>
+            <td>{{i.hospital}}</td>
+            <td>{{i.donated_date}}</td>
+            <td><a href="/static/{{i.certificate}}" class="btn btn-outline-info" style="margin-left: 10%;">Download</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div></center>
+
+</body>
+</html>
+{% endblock %}
