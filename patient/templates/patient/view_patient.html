@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+		td{
+			color: white;
+			font-size: larger;
+			border: 1px solid #110000;
+			text-align: left;
+			padding: 8px;
+		}
+		h2{
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<center>
+    <h2>View  Patient</h2>
+
+    <div class="container mt-3">
+        <div class="table-responsive">
+            <table border="2" class="table table-bordered">        <tr>
+            <td>Patient Name</td>
+            <td>Age</td>
+            <td>Blood group</td>
+            <td>Registered Date</td>
+            <td>Bystander Name</td>
+            <td>Phone</td>
+            
+           </tr>
+        {% for i in x%}
+        <tr>
+            <td>{{i.patient_name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.bloodgroup}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.bystandername}}</td>
+            <td>{{i.phone}}</td>    
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</div></center>
+
+</body>
+</html>
